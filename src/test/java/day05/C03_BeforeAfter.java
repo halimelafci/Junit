@@ -27,6 +27,15 @@ public class C03_BeforeAfter {
         driver.get("https://amazon.com");
     }
 
+    @Test
+    public void method2(){
+        driver.get("https://techproeducation.com");
+    }
+    @Test
+    public void method3(){
+        driver.get("https://hepsiburada.com");
+    }
+
 
     @After
     public void tearDown(){
