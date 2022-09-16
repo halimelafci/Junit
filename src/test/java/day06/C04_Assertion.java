@@ -51,11 +51,10 @@ public class C04_Assertion {
     @Test
     public void test3(){
         // Search Box 'in erisilebilir oldugunu test edin (isEnabled())
+      Assert.assertTrue(driver.findElement(By.xpath("//div[@id=\"search-input\"]")).isEnabled());
+
 
     }
-
-
-
 
     @AfterClass
     public static void tearDown() {
