@@ -1,6 +1,7 @@
 package day06;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -53,6 +54,16 @@ public class C04_Assertion {
         // Search Box 'in erisilebilir oldugunu test edin (isEnabled())
       Assert.assertTrue(driver.findElement(By.xpath("//div[@id=\"search-input\"]")).isEnabled());
 
+
+    }
+
+    @Test
+    public void test4(){
+        // wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
+      String actualTitle=driver.getTitle();
+      String expectedTitle="youtube";
+
+      Assert.assertNotEquals(expectedTitle,actualTitle);
 
     }
 
