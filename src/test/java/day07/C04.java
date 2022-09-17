@@ -26,7 +26,7 @@ public class C04 {
     }
     @After
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
     @Test
     public void test1(){
