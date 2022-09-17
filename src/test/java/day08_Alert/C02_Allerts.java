@@ -53,7 +53,7 @@ public class C02_Allerts {
      }
      @After
     public void tearDown(){
-         driver.close();
+         //driver.close();
      }
 
 
@@ -94,9 +94,41 @@ public class C02_Allerts {
         //2. butona tıklayın, uyarıdaki Cancel butonuna tıklayın ve result mesajının
         //“successfuly” icermedigini test edin.
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
         driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
+
         System.out.println("2.Butonun Alert Mesaji :"+driver.switchTo().alert().getText());
         Thread.sleep(3000);
+
+        driver.switchTo().alert().dismiss();
+        String actualMesaj=driver.findElement(By.xpath("//*[@id='result']")).getText();
+
+        String expectedMesaj="successfuly";
+
+        Assert.assertFalse(actualMesaj.contains(expectedMesaj));
+
+
+    }
+    @Test
+    public void test3() throws InterruptedException {
+        //3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna
+        //tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
+        driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
+        Thread.sleep(3000);
+
+        //alert uzerindeki mesaji yazdirin
+        System.out.println("3. Butonun alert mesaji :"+driver.switchTo().alert().getText());
+
+
+        driver.switchTo().alert().sendKeys("Halime");
+        driver.switchTo().alert().accept();
+
+        String actualMesaj=driver.findElement(By.xpath("//p[@id=\"result\"]")).getText();
+        String expectedMesaj="Halime";
+        Assert.assertTrue(actualMesaj.contains(expectedMesaj));
+
 
     }
 
