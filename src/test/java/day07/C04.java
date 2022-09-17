@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.List;
 
 public class C04 {
 
@@ -36,11 +37,32 @@ public class C04 {
         WebElement ddm = driver.findElement(By.xpath("//*[@id='dropdown']"));
         Select select = new Select(ddm);
         select.selectByIndex(1);
+        System.out.println(select.getFirstSelectedOption().getText());
+
+
         //Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
+        select.selectByValue("2");
+        System.out.println(select.getFirstSelectedOption().getText());
+
         //Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
+        select.selectByVisibleText("Option 1");
+        System.out.println(select.getFirstSelectedOption().getText());
+
+
         //Tüm dropdown değerleri(value) yazdırın
+        List<WebElement>tumDdm=select.getOptions();
+        tumDdm.forEach(t-> System.out.println(t.getText()));
+
+
         //Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True , degilse
         //False yazdırın.
+        System.out.println("Dropdown Boyutu : "+tumDdm.size());
+
+        if (tumDdm.size()==4){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
     }
 }
 
