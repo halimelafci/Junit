@@ -2,6 +2,7 @@ package day08_Alert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -80,6 +81,22 @@ public class C02_Allerts {
         driver.switchTo().alert().accept();
 
         WebElement mesaj=driver.findElement(By.xpath("//p[@id=\"result\"]"));
+        String actualMesaj=mesaj.getText();
+        String expectMesaj="You successfully clicked an alert";
+
+        Assert.assertEquals(expectMesaj,actualMesaj);
+
+
+    }
+
+    @Test
+    public void test2() throws InterruptedException {
+        //2. butona tıklayın, uyarıdaki Cancel butonuna tıklayın ve result mesajının
+        //“successfuly” icermedigini test edin.
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
+        System.out.println("2.Butonun Alert Mesaji :"+driver.switchTo().alert().getText());
+        Thread.sleep(3000);
 
     }
 
