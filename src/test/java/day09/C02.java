@@ -64,7 +64,7 @@ public class C02 {
 
         //5- İlk sayfaya dönüp sayfada java aratalım
         driver.switchTo().window(amazonWindowHandel);
-    }
+     }
 
 
 
