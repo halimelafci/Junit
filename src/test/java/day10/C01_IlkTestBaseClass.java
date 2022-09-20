@@ -1,9 +1,9 @@
 package day10;
 
 import org.junit.Test;
-import utils.C01_TestBaseBforeAfter;
+import utils.TestBaseBforeAfter;
 
-public class C01_IlkTestBaseClass extends C01_TestBaseBforeAfter {
+public class C01_IlkTestBaseClass extends TestBaseBforeAfter {
 
 
     @Test
