@@ -42,6 +42,8 @@ public class C04_Action extends TestBaseBforeAfter {
         List<String> windowlist = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(windowlist.get(1));
 
+
+
         //Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim
 
         Assert.assertEquals("Elemental Selenium",driver.findElement(By.xpath("//h1")).getText());
