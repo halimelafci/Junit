@@ -1,5 +1,6 @@
 package day12;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,5 +23,10 @@ public class C02_FileUploaded extends TestBaseBforeAfter {
 
        String dosyaYolu="C:\\Users\\SarıSiyah\\Downloads\\test.txt";
        dosyaSec.sendKeys(dosyaYolu);
+
+       driver.findElement(By.xpath("//input[@id=\"file-submit\"]")).click();
+
+       WebElement fileUploaded=driver.findElement(By.xpath("//h3[text()='File Uploaded!']"));
+        Assert.assertTrue(fileUploaded.isDisplayed());
     }
 }
