@@ -24,7 +24,7 @@ public class C03_SenkranizasyonWait extends TestBaseBforeAfter {
     @Test
     public void implicitWait() {
 
-       /*
+
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
 
@@ -37,7 +37,7 @@ public class C03_SenkranizasyonWait extends TestBaseBforeAfter {
     WebElement backMesaji=driver.findElement(By.xpath("//p[@id=\"message\"]"));
         Assert.assertTrue(backMesaji.isDisplayed());
 
-        */
+
 
     }
 
