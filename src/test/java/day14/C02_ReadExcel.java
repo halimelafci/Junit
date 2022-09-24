@@ -5,11 +5,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class C01_ReadExcel {
-
+public class C02_ReadExcel {
     @Test
 
     public void readExcelTesti() throws IOException {
@@ -25,19 +23,18 @@ public class C01_ReadExcel {
         Workbook workbook= WorkbookFactory.create(fis);
 
         //- Sheet objesi olusturun workbook.getSheetAt(index)
-        Sheet sheet= workbook.getSheet("Sayfa1");
-
         //- Row objesi olusturun sheet.getRow(index)
-        Row row=sheet.getRow(3);//sayfa1 3.satiri sec
-
         //- Cell objesi olusturun row.getCell(index)
-        Cell cell= row.getCell(3);
-        System.out.println(cell);
+
 
         //- 3. index'deki satirin 3. index'indeki datanin Cezayir oldugunu test edin
-        String expectedData="Cezayir";
-        String actualDta=cell.toString();
-        Assert.assertEquals(expectedData,actualDta);
+
+          String actualDta=workbook.
+                getSheet("Sayfa1").
+                getRow(3).
+                getCell(3).toString();
+        System.out.println(actualDta);
+
 
 
 
