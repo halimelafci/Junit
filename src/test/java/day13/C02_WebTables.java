@@ -31,10 +31,6 @@ public class C02_WebTables extends TestBaseBforeAfter {
         //4.satirdaki(row) elementleri konsolda yazdırın.
 
 
-
-
-
-
         driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin");
 
         driver.findElement(By.xpath("//*[@id='UserName']")).click();
@@ -71,4 +67,6 @@ public class C02_WebTables extends TestBaseBforeAfter {
 
 
     }
+
+
 }
