@@ -30,9 +30,10 @@ public class C01_ReadExcel extends TestBaseBforeAfter {
         for (int i = 0; i <=sonasatir ; i++) {
 
             tablo=workbook.getSheet("Sayfa1").getRow(i).getCell(0).toString()+" , "+
-                    workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString()+" , "+
-                    workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString()+" , "+
-                    workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString()+" , ";
+                  workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString()+" , "+
+                  workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString()+" , "+
+                  workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString()+" , ";
+
             System.out.println(tablo);
 
 
